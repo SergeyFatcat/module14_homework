@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Smart Agency Landign Page</title>
+	<style>
+		*,
+		*::before,
+		::after {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+		html,
+		body {
+			height: 100%;
+			min-height: 100%;
+			width: 100%;
+			font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+		}
+
+		body {
+			padding-top: 50px;
+		}
+
+		.wrapper {
+			height: 100%;
+			min-height: 100%;
+			width: 100%;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: vertical;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: column;
+			flex-direction: column;
+		}
+
+		.container {
+			max-width: 1142px;
+			height: 100%;
+			min-height: 100%;
+			margin: 0 auto;
+		}
+
+		.header {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+			margin-bottom: 150px;
+		}
+
+		.main {
+			-webkit-box-flex: 1;
+			-ms-flex: 1 0 auto;
+			flex: 1 0 auto;
+		}
+
+		.footer {
+			-webkit-box-flex: 0;
+			-ms-flex: 0 0 auto;
+			flex: 0 0 auto;
+			background-color: #000;
+			height: 50px;
+		}
+
+		/*Elements*/
+		.title {
+			font-size: 50px;
+			text-align: center;
+			color: #aeacb0;
+			margin-bottom: 30px;
+		}
+
+		.title span {
+			color: #ff5c36;
+		}
+
+		.subtitle {
+			width: 712px;
+			margin: 0 auto;
+			text-align: center;
+			color: #aeacb0;
+			font-size: 16px;
+			line-height: 25px;
+		}
+
+		/*Header*/
+		.header__box {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-pack: justify;
+			-ms-flex-pack: justify;
+			justify-content: space-between;
+		}
+
+		.header__logo {
+			font-size: 38px;
+			color: #aeacb0;
+			border: #aeacb0 solid 4px;
+			padding: 10px 20px;
+		}
+
+		.header__logo::first-letter {
+			color: #ff5c36;
+		}
+
+		.header__menu {
+			padding: 3px;
+		}
+
+		.header__menu span {
+			display: block;
+			height: 4px;
+			width: 35px;
+			background-color: #aeacb0;
+			margin: 6px 0;
+		}
+
+		/*#####################################*/
+		.blocks {
+			margin: 0 auto;
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-ms-flex-wrap: wrap;
+			flex-wrap: wrap;
+			width: 500px;
+		}
+
+		.block {
+			width: 200px;
+			margin: 20px;
+		}
+
+		.block img {
+			display: block;
+			width: 200px;
+			height: 150px;
+		}
+
+		.input {
+			display: block;
+			margin: 25px auto;
+			font-size: 1.5rem;
+			padding: .5em;
+			border: #aeacb0 solid 4px;
+		}
+
+		.output {
+			text-align: center;
+			margin: 25px auto;
+			color: #aeacb0;
+		}
+
+		.btn {
+			display: block;
+			padding: 1em;
+			border: none;
+			outline: none;
+			-webkit-box-shadow: none;
+			box-shadow: none;
+			cursor: pointer;
+			margin: 5px auto;
+			border-radius: 4px;
+			font-family: inherit;
+			font-size: 16px;
+			line-height: 15px;
+			text-transform: uppercase;
+			letter-spacing: .2em;
+			color: white;
+			background: #ff5c36;
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+		}
+
+		.btn:hover {
+			-webkit-box-shadow: 0px 2px 8px 2px rgba(141, 150, 178, 0.3);
+			box-shadow: 0px 2px 8px 2px rgba(141, 150, 178, 0.3);
+			-webkit-transform: scale(1.05);
+			-ms-transform: scale(1.05);
+			transform: scale(1.05);
+		}
+	</style>
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="container">
+				<div class="header__box">
+					<div class="header__logo">Smart</div>
+					<div class="header__menu">
+						<span class="bar"></span>
+						<span class="bar"></span>
+						<span class="bar"></span>
+					</div>
+				</div>
+			</div>
+
+		</header>
+		<main class="main">
+			<section class="heder-section">
+				<div class="container">
+					<h1 class="title header-section__title">
+						<span>Smart</span> Agency Landign Page
+					</h1>
+					<p class="subtitle">
+						Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, fuga provident. Libero magni
+						quibusdam labore ad iste
+						saepe hic, maxime qui ipsum tempore beatae, volu tomi ptates doloremque rerum aspernatur dolorum
+						at!
+					</p>
+					<div class="container">
+						<div class="box">
+							<form class="form" action="">
+								<input class="input" type="text" value="">
+							</form>
+							<button class="btn" tabindex="1">Button</button>
+							<div class="blocks">
+
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</main>
+		<footer class="footer">
+
+		</footer>
+	</div>
+
+
+	<script>
+
+		const input = document.querySelector('input');
+		const button = document.querySelector('button');
+		const blocks = document.querySelector('.blocks');
+		const form = document.querySelector('.form');
+		const output = document.createElement('p');
+
+		let elemsToShow = {};
+
+		function makeRquest(value) {
+			const xhr = new XMLHttpRequest();
+			xhr.open('GET', `https://picsum.photos/v2/list?limit=${value}`);
+			xhr.send();
+			xhr.onload = function () {
+				if (xhr.status != 200) {
+					console.log('Статус ответа: ', xhr.status);
+				} else {
+					elemsToShow = JSON.parse(xhr.response);
+					blocks.innerHTML = renderElems(elemsToShow);
+					console.log('Результат: ', elemsToShow);
+					console.log('HTML: ', renderElems(elemsToShow));
+				}
+			};
+			xhr.onerror = function () {
+				console.log('Ошибка! Статус ответа: ', xhr.status);
+			};
+		}
+
+		function renderElems(elemsToShow) {
+			let blocks = '';
+			let block = '';
+			elemsToShow.forEach(elem => {
+				block = `
+		<div class="block">
+        <img
+          src="${elem.download_url}"
+        />
+        <p>${elem.author}</p>
+      </div>
+		`;
+				blocks += block;
+			})
+			return blocks;
+		}
+
+		function showElems() {
+			if (input.value > 11 || input.value < 1 || isNaN(+input.value)) {
+				console.log(message + " " + input.value);
+				input.insertAdjacentElement('afterend', output);
+				output.className = 'output';
+				output.textContent = 'Число вне диапазона от 1 до 10';
+				blocks.innerHTML = '';
+			} else {
+				makeRquest(input.value)
+				console.log('Запрос');
+				output.remove();
+			}
+		}
+
+		button.addEventListener('click', (event) => {
+			event.preventDefault();
+			showElems();
+		});
+
+		form.addEventListener('submit', (event) => {
+			event.preventDefault();
+			showElems();
+		});
+
+
+	</script>
+</body>
+
+</html>

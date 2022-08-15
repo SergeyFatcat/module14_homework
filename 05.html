@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>05</title>
+</head>
+
+<body>
+	<div class="wrapper">
+		<div class="container">
+			<form action="" class="form">
+				<input class="input" id="input1" type="text" tabindex="1">
+				<input class="input" 1d="input2" type="text" tabindex="2">
+				<button class="button">Button</button>
+			</form>
+			<div class="output"></div>
+		</div>
+	</div>
+	<script>
+
+
+
+		const inputs = document.querySelectorAll('.input');
+		const button = document.querySelector('.button');
+		const form = document.querySelector('.form');
+		const output = document.querySelector('.output')
+
+
+		function makeRequest() {
+			values = [];
+			for (input of inputs) {
+				let value = +input.value;
+				if (value < 100 || value > 300 || isNaN(+value)) {
+					output.innerHTML = `One of the numbers outside the range from 100 to 300: ${value}`;;
+					return;
+				} else {
+					values.push(value);
+					output.innerHTML = values[0] + ' X ' + values[1];
+				}
+
+			}
+			fetch(`https://picsum.photos/${values[0]}/${values[1]}`).then(response => output.innerHTML = `
+			<p> Output: </p>
+			<img src='${response.url}'/>
+			`).catch(error => output.innerHTML = `
+			<p> Received data is not correct </p>
+			`)
+		}
+
+		form.addEventListener('submit', event => {
+			event.preventDefault();
+			makeRequest()
+		});
+		button.addEventListener('click', event => {
+			event.preventDefault();
+			makeRequest()
+		});
+
+
+
+
+
+	</script>
+</body>
+
+</html>

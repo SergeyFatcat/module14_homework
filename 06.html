@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<style>
+		.img {
+			width: 300px;
+		}
+	</style>
+
+</head>
+
+<body>
+	<form id="form" action="">
+		<label for="page-number">
+			Номер страницы
+			<input type="text" id="page-number">
+		</label>
+		<label for="">
+			Лимит
+			<input type="text" id="limit">
+		</label>
+		<button id="request">Запрос</button>
+	</form>
+	<div id="output"></div>
+	<script>
+
+		const pageNumberInput = document.querySelector('#page-number');
+		const limitInput = document.querySelector('#limit');
+		const requestButton = document.querySelector('#request');
+		const outputBlock = document.querySelector('#output');
+		const form = document.querySelector('#form');
+
+		function getData() {
+			if ((pageNumberInput.value >= 10 || isNaN(+pageNumberInput.value)) && (limitInput.value >= 10 || isNaN(+limitInput.value))) {
+				outputBlock.innerHTML = '«Номер страницы и лимит вне диапазона от 1 до 10»'
+			} else if (limitInput.value >= 10 || isNaN(+limitInput.value)) {
+				outputBlock.innerHTML = '«Лимит вне диапазона от 1 до 10»'
+			} else if (pageNumberInput.value >= 10 || isNaN(+pageNumberInput.value)) {
+				outputBlock.innerHTML = '«Номер страницы вне диапазона от 1 до 10»'
+			} else {
+				outputBlock.innerHTML = '';
+				fetch(`https://picsum.photos/v2/list?page=${pageNumberInput.value}&limit=${limitInput.value}`)
+					.then(res => res.json())
+					.then(res => {
+						// console.log(res)
+						for (item of res) {
+							outputBlock.innerHTML += `
+							<img class="img" src="${item.download_url}"/>
+							`
+						}
+						localStorage.setItem('images', outputBlock.innerHTML);
+					});
+			}
+		}
+
+		document.addEventListener("DOMContentLoaded", event => {
+			outputBlock.innerHTML = localStorage.getItem('images');
+		});
+
+		requestButton.addEventListener('click', event => {
+			event.preventDefault();
+			getData();
+		});
+		form.addEventListener('submit', event => {
+			event.preventDefault();
+			getData();
+		})
+
+
+	</script>
+</body>
+
+</html>
